@@ -1,3 +1,8 @@
-baseurl = "/"
+baseURL = "/"
 languageCode = "en-us"
-title = "Homepage"
+title = "Steven Wade"
+
+[permalinks]
+  post = "/:year/:month/:day/:title/"
+
+pygmentsCodeFences = true

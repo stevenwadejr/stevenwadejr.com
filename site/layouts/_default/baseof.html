@@ -1,9 +1,48 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  {{ partial "head" . }}
-  <body class="sans-serif">
-    {{ partial "nav" . }}
-    {{ block "main" . }}{{ end }} 
-    {{ partial "footer" . }} 
-  </body>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- COMMON TAGS -->
+	<title>{{ .Title }}</title>
+	<!-- Search Engine -->
+	<meta name="description" content="{{ .Description }}">
+	<meta name="image" content="{{ $.Param "image" }}">
+	<!-- Schema.org for Google -->
+	<meta itemprop="name" content="{{ .Title }}">
+	<meta itemprop="description" content="{{ .Description }}">
+	<meta itemprop="image" content="{{ $.Param "image" }}">
+	<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+	<meta name="og:title" content="{{ .Title }}">
+	<meta name="og:description" content="{{ .Description }}">
+	{{ if $.Param "image" }}<meta name="og:image" content="{{ .Site.BaseURL}}{{ $.Param "image" }}">{{ end }}
+	<meta name="og:url" content="{{ .Permalink }}">
+	<meta name="og:site_name" content="{{ .Title }}">
+	<meta name="og:type" content="article">
+	<!-- Open Graph - Article -->
+	<meta name="article:tag" content="{{ range .Params.tags }}{{.}} {{end}}">
+	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/style{{ $.Site.Params.style }}.css">
+	<!-- Google Analytics -->
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300" rel="stylesheet">
+	<link href='/css/main.css' rel='stylesheet' type="text/css" />
+	
+	{{ partial "analytics.html" . }}
+</head>
+
+<body>
+    <header id="sidebar" class="column">
+        {{ partial "gravatar.html" . }}
+		{{ partial "links.html" . }}
+        {{ partial "bio-short.html" }}
+    </header>
+
+    <main id="main" class="column">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <!-- <footer>
+        <p>&copy; {{ now.Year}}, all rights reserved.</a>
+    </footer> -->
+</body>
 </html>
