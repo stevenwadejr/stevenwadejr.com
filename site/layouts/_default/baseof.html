@@ -21,11 +21,11 @@
 	<meta name="og:type" content="article">
 	<!-- Open Graph - Article -->
 	<meta name="article:tag" content="{{ range .Params.tags }}{{.}} {{end}}">
-	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/style{{ $.Site.Params.style }}.css">
 	<!-- Google Analytics -->
     
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300" rel="stylesheet">
 	<link href='/css/main.css' rel='stylesheet' type="text/css" />
+	<link href='/css/site.css' rel='stylesheet' type="text/css" />
 	
 	{{ partial "analytics.html" . }}
 </head>

@@ -38,7 +38,7 @@ gulp.task("css", () => (
 ));
 
 gulp.task('sass', function() {
-  return gulp.src("./src/sass/main.scss")
+  return gulp.src("./src/sass/site.scss")
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest("./dist/css"))
     .pipe(browserSync.stream())
