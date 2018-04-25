@@ -84,4 +84,4 @@ At this point, I was feeling pretty clever and sufficiently satisfied with mysel
 
 So that’s where my journey ended. I’m no closer to API bliss than when I started, but I do feel a sense of joy for having discovered something that most people (if any?) in the general HubSpot API user public don’t know about. So I got that going for me, which is nice.
 
-![](/images/article_images/hubspots-secret-shadow-proxy/which-is-nice.jpg)
+![](/images/article_images/which-is-nice.jpg)
