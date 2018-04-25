@@ -1,4 +1,4 @@
-html {
+/* html {
   font-size: var(--font-size);
   @media (--breakpoint-medium) {
     font-size: var(--font-size-m);
@@ -7,22 +7,24 @@ html {
     font-size: var(--font-size-l);
   }
   background-color: var(--black);
-}
+} */
 
 
 body {
+  background-color: var(--white);
+  color: var(--color-main);
+  min-height: 100%;
   font-family: var(--font-family);
   font-size: var(--spacing-medium);
   line-height: var(--line-height);
   font-weight: var(--body-font-weight);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--off-white);
- }
+}
 
 p {
   margin-bottom: var(--spacing-medium);
-  max-width: 32rem;
+  /* max-width: 32rem; */
 }
 
 strong {

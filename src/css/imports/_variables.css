@@ -10,9 +10,16 @@
 	--grey-4: rgba(66, 64, 64, 1);
 	--black: rgba(43, 37, 35, 1);
 
+	--color-main: #141924;
+	--color-purple: #4A4591;
+	--color-purple-100: #aeabdb;
+	--color-purple-200: #5D57B8;
+	--color-purple-800: #352957;
+	--color-green: #57ad68;
+
 	/* Typography */
-	--font-family: Nunito Sans, -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
-	--line-height: 1.5;
+	--font-family: 'Raleway', 'Open Sans', "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	--line-height: 24px;
 
 	--font-size: 18px;
 	--font-size-m: 20px;

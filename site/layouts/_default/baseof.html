@@ -25,19 +25,18 @@
     
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:300" rel="stylesheet">
 	<link href='/css/main.css' rel='stylesheet' type="text/css" />
-	<link href='/css/site.css' rel='stylesheet' type="text/css" />
 	
 	{{ partial "analytics.html" . }}
 </head>
 
-<body>
-    <header id="sidebar" class="column">
+<body class="absolute flex flex-wrap">
+    <header id="sidebar" class="flex flex-column flex-row-mobile">
         {{ partial "gravatar.html" . }}
 		{{ partial "links.html" . }}
         {{ partial "bio-short.html" }}
     </header>
 
-    <main id="main" class="column">
+    <main id="main" class="flex flex-column flex-row-mobile">
         {{ block "main" . }}{{ end }}
     </main>
 

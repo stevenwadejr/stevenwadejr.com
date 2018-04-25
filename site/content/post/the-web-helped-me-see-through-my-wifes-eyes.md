@@ -2,8 +2,8 @@
 title: "The Web Helped Me See Through My Wife's Eyes"
 date: 2014-03-05T00:00:00-04:00
 comments: true
-image: /article_images/the-web-helped-me-see-through-my-wifes-eyes/classroom.jpg
-thumb: /article_images/the-web-helped-me-see-through-my-wifes-eyes/classroom-thumb.jpeg
+image: /images/article_images/the-web-helped-me-see-through-my-wifes-eyes/classroom.jpg
+thumb: /images/article_images/the-web-helped-me-see-through-my-wifes-eyes/classroom-thumb.jpeg
 ---
 
 Most people go about their every day lives worrying over the smallest things. They get angry when someone steals their parking space, when a baby won&#8217;t stop crying in a public setting, or when the quality of their latest Netflix binge is below Super HD. We bicker and we moan over the most minuscule &#8220;problems&#8221; in our lives. We too easily lose sight of what is really important in life and we take for granted the many blessings each us receives on a daily basis. When was the last time any of us gave a gave a second thought to the roll that our sense of smell plays upon the foods we eat? Or the fact that our sense of touch is sensitive enough to detect the difference between a house and a car if our fingertips were the size of the Earth. We pay no attention to the fact that we have almost a 270 degree field of vision (including head and eye rotation), or that our brain is capable of distinguishing about 10 million different colors. The human body is capable of amazing things, under normal circumstances. But what about those who&#8217;s circumstances are a little less normal?
@@ -30,7 +30,7 @@ What was the gift?
 
 I was given the gift of sight. I stumbled upon a simple website called <a href="http://www.eye-sim.com/" target="_blank">Eye Simulator</a>. It allows you to put in a prescription and it renders an image that simulates the vision of person with that prescription. The predefined values of the fields don&#8217;t actually go as low as my wife&#8217;s prescription, so I entered the lowest values available in the form. The image generated is slightly better than my wife&#8217;s vision. Care to see the through my wife&#8217;s eyes? This is her world without glasses:
 
-![](/article_images/the-web-helped-me-see-through-my-wifes-eyes/classroom_-7_-2.5_20-1024x576.jpg)
+![](/images/article_images/the-web-helped-me-see-through-my-wifes-eyes/classroom_-7_-2.5_20-1024x576.jpg)
 
 To put it into perspective, the image at the top of this post is the crystal clear image of perfect vision.
 
@@ -39,6 +39,3 @@ Wow.
 Honestly, when I saw this, I was speechless. I felt a battery of emotions all at once. I never dreamt that I would be able to understand. It&#8217;s not an exact representation, but it&#8217;s close enough. This simple image made me appreciate and love my wife even more. It also put my life into perspective. I suddenly felt ashamed of all of the petty complaining I do throughout the day. I felt more appreciative of the gifts that I&#8217;ve been given. And I felt even more determined to do whatever it takes to love, honor, respect, and help my wife in any way possible.
 
 This website, and specifically this image, have given me perhaps the second greatest gift that I&#8217;ve ever received. I will never be able to fully put into words my gratitude and appreciation for it&#8217;s creator. Thank you.
-
- [1]: http://stevenwade.name/wp-content/uploads/2014/03/classroom_0_0_0.jpg
- [2]: http://stevenwade.name/wp-content/uploads/2014/03/classroom_-7_-2.5_20.jpg
