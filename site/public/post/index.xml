@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Steven Wade</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Steven Wade</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Sep 2018 21:50:08 -0400</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Readability Counts</title>
+      <link>/2018/09/18/readability-counts/</link>
+      <pubDate>Tue, 18 Sep 2018 21:50:08 -0400</pubDate>
+      
+      <guid>/2018/09/18/readability-counts/</guid>
+      <description>&amp;ldquo;Any fool can write code that a computer can understand. Good programmers write code that humans can understand.&amp;rdquo; - Martin Fowler
+I have a friend who once told me that it&amp;rsquo;s our jobs to write code that can be maintained. When you open up someone else&amp;rsquo;s code, or even your own from a while back, the clock immediately starts ticking. The more time you have to think about what code is doing or what variable p stands for, the more time you&amp;rsquo;re wasting and the more money your employer is spending.</description>
+    </item>
+    
+    <item>
+      <title>Hubspots Secret Shadow Proxy</title>
+      <link>/2017/06/01/hubspots-secret-shadow-proxy/</link>
+      <pubDate>Thu, 01 Jun 2017 00:00:00 -0400</pubDate>
+      
+      <guid>/2017/06/01/hubspots-secret-shadow-proxy/</guid>
+      <description>I’ve got beef with the HubSpot API and it has its fair share of issues. I’ll do another post in the future discussing those more, but that’s not the focus of this post.
+HubSpot has a secret, and I’ve found it out.
+Ok, so it’s not the coolest secret in the world. It’s not like I’ve found a backdoor into their mainframe or detected a glitch in the Matrix or anything, but I thought it was pretty cool.</description>
+    </item>
+    
+    <item>
+      <title>Starting a User Group</title>
+      <link>/2016/03/03/starting-a-user-group/</link>
+      <pubDate>Thu, 03 Mar 2016 00:00:00 -0400</pubDate>
+      
+      <guid>/2016/03/03/starting-a-user-group/</guid>
+      <description>A few weeks ago, a friend of mine, Matt Stauffer invited me on his podcast the Five Minute Geek Show to talk about starting a user group. This gave me cause to reflect on the past two years and the successes they&amp;rsquo;ve brought and the lessons I’ve learned while starting and running a user group.
+Officially, UpstatePHP started in March 2014, however, it actually began 4 months earlier with an idea.</description>
+    </item>
+    
+    <item>
+      <title>The Web Helped Me See Through My Wife&#39;s Eyes</title>
+      <link>/2014/03/05/the-web-helped-me-see-through-my-wifes-eyes/</link>
+      <pubDate>Wed, 05 Mar 2014 00:00:00 -0400</pubDate>
+      
+      <guid>/2014/03/05/the-web-helped-me-see-through-my-wifes-eyes/</guid>
+      <description>Most people go about their every day lives worrying over the smallest things. They get angry when someone steals their parking space, when a baby won&amp;#8217;t stop crying in a public setting, or when the quality of their latest Netflix binge is below Super HD. We bicker and we moan over the most minuscule &amp;#8220;problems&amp;#8221; in our lives. We too easily lose sight of what is really important in life and we take for granted the many blessings each us receives on a daily basis.</description>
+    </item>
+    
+    <item>
+      <title>&#34;Don&#39;t Bind Yourself To A Framework&#34;: or, Shut Up and Build Your Shit</title>
+      <link>/2013/10/31/dont-bind-yourself-to-a-framework-or-shut-up-and-build-your-shit/</link>
+      <pubDate>Thu, 31 Oct 2013 00:00:00 -0400</pubDate>
+      
+      <guid>/2013/10/31/dont-bind-yourself-to-a-framework-or-shut-up-and-build-your-shit/</guid>
+      <description>It&amp;#8217;s almost November and boy has 2013 been a rough year for PHP. From what I gather, it&amp;#8217;s &amp;#8220;hip&amp;#8221; to hate PHP right now. With so many outsiders, and insiders, fighting and bashing the language and each other as if they were high school rivals, I&amp;#8217;ve been rather surprised and elated to see the formation of the PHP FIG and the work they&amp;#8217;ve done with the PSR standard. Having so many library and framework authors come together, agree upon a standard way of doing things in order to make their code interoperable, and then actually upgrading their code to meet said standard is an amazing feat that just a short while ago would have seemed impossible.</description>
+    </item>
+    
+    <item>
+      <title>Build RegEx</title>
+      <link>/2013/08/05/build-regex/</link>
+      <pubDate>Mon, 05 Aug 2013 00:00:00 -0400</pubDate>
+      
+      <guid>/2013/08/05/build-regex/</guid>
+      <description>Regular Expressions, does anyone actually like them? I suck at them. If you&amp;#8217;re like me at all, you struggle with them too. When I need to use regular expressions, I spend countless amounts of time on RegexPal trying to find just the right combination. That&amp;#8217;s why I built Build RegEx.
+This week, I discovered VerbalExpressions. Oh my! Regex made simple! What could be better than this? A GUI!! Thanks to the suggestion of my buddy Mike Crittenden, I decided to make a simple GUI that uses the VerbalExpressions JavaScript library.</description>
+    </item>
+    
+  </channel>
+</rss>
