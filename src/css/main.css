@@ -196,7 +196,7 @@ p {
 #links {
     display: flex;
     justify-content: space-between;
-    margin-left: 10%;
+    margin: 15px 0 15px 10%;
     width: 80%;
 
     svg {
