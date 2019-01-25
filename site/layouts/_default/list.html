@@ -27,8 +27,7 @@
                 </header>
             
                 <div class="summary">
-                    <p>{{ .Summary }}</p>
-                    <a href="{{ .RelPermalink }}">Read More…</a>
+                    <p>{{ .Summary }}{{ if .Truncated }} [<a href="{{ .RelPermalink }}">read more…</a>]{{ end }}</p>
                 </div>
             </section>
         </article>

@@ -30,13 +30,13 @@
 </head>
 
 <body class="absolute flex flex-wrap flex-row">
-    <header id="-sidebar" class="dib w-25">
+    <header id="sidebar" class="dib w-25">
         {{ partial "gravatar.html" . }}
 		{{ partial "links.html" . }}
         {{ partial "bio-short.html" }}
     </header>
 
-    <main id="-main" class="dib w-75">
+    <main id="main" class="dib w-75">
         {{ block "main" . }}{{ end }}
     </main>
 

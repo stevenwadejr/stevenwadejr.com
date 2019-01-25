@@ -86,18 +86,22 @@
 /* Uncomment out the line below to help debug layout issues */
 /* @import './imports/_debug'; */
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+body {
+    color: var(--color-body);
+}
 * {
     margin: 0;
     padding: 0;
 }
 a {
-    color: var(--color-purple);
+    color: var(--link-color);
     text-decoration: none;
     transition: color 0.2s ease-in-out;
 
     &:hover {
-        color: var(--color-purple-800);
+        color: var(--link-color);
     }
 }
 p {
@@ -106,28 +110,20 @@ p {
     &:empty {
         display:none;
     }
-
-    a {
-        text-decoration-color: var(--color-purple-100);
-        text-decoration: underline;
-    }
 }
 #sidebar {
-    border-right: 1px solid #eee;
-    flex: 1;
-    padding: 4% 2%;
-
-    & > * {
-        margin-bottom: 20px;
-    }
+    padding-top: 32px;
 }
 #main {
     flex: 3;
 }
+.articles {
+    padding: 16px 0;
+}
 .post {
     font-size: 16px;
-    font-weight: 200;
-    padding: 32px 48px;
+    /*font-weight: 200;*/
+    padding: 16px 48px;
 
     .post-thumb {
         float: left;
@@ -141,6 +137,14 @@ p {
 
     header {
         margin-bottom: 20px;
+
+        a {
+            color: var(--color-bold);
+
+            &:hover {
+                color: var(--color-bold);
+            };
+        }
     }
 
     time {
@@ -186,6 +190,12 @@ p {
         }
     }
 }
+.summary {
+    & > p {
+        margin-bottom: 10px;
+    }
+}
+
 .gravatar {
     img {
         border-radius: 50%;
@@ -196,22 +206,23 @@ p {
 #links {
     display: flex;
     justify-content: space-between;
-    margin: 15px 0 15px 10%;
-    width: 80%;
+    margin: 15px auto;
+    width: 70%;
 
     svg {
-        fill: var(--color-purple);
+        fill: var(--color-bold);
         height: 24px;
         transition: color 0.2s ease-in-out;
 
         &:hover {
-            fill: var(--color-purple-800);
+            fill: var(--color-bold);
         }
     }
 }
 #bio-short {
-    margin-left: 10%;
-    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    width: 70%;
 }
 pre {
     padding: 8px 12px;
@@ -227,4 +238,30 @@ pre {
 }
 code {
     padding: 1px 5px;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        display: block;
+        margin-left: 25%;
+        width: 50%;
+    }
+    .post-thumb {
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    #sidebar {
+        margin-left: 15%;
+        width: 70%;
+
+        #bio-short {
+            width: 100%;
+        }
+    }
 }

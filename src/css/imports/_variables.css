@@ -17,15 +17,20 @@
 	--color-purple-800: #352957;
 	--color-green: #57ad68;
 
+	--link-color: #2ea3f2;
+	--color-bold: #333;
+	--color-body: #666;
+
 	/* Typography */
-	--font-family: 'Raleway', 'Open Sans', "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	/*--font-family: 'Raleway', 'Open Sans', "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;*/
+	--font-family: "Open Sans", Arial, sans-serif;
 	--line-height: 24px;
 
 	--font-size: 18px;
 	--font-size-m: 20px;
 	--font-size-l: 22px;
 
-	--body-font-weight: 400;
+	--body-font-weight: 500;
 	--bold-font-weight: 700;
 
 	/* Sizing */
