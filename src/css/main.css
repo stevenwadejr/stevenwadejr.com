@@ -86,8 +86,6 @@
 /* Uncomment out the line below to help debug layout issues */
 /* @import './imports/_debug'; */
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
 body {
     color: var(--color-body);
 }
