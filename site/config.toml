@@ -5,4 +5,57 @@ title = "Steven Wade"
 [permalinks]
   post = "/:year/:month/:day/:title/"
 
-pygmentsCodeFences = true
+languageCode = "en-us"
+title = "Steven Wade"
+theme = "ink"
+paginate = 5
+
+copyright = "© Copyright notice"
+
+pygmentsstyle = "vs"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+googleAnalytics = "UA-123-45"
+disqusShortname = "ink-demo"
+
+[params]
+	subtitle = "Husband, Father, Software Engineer (in that order)"
+
+	# Optional 64x64 avatar image.
+	avatar = "/images/profile-pic.jpeg"
+
+	# Content types to disable Disqus on.
+	disableDisqusTypes = ["page"]
+	
+	featherIconsCDN = true
+
+	mode = "auto" # "dark" or "auto"
+	# customCSS = "css/custom.css"  # Custom CSS applied to default styles.
+	# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
+	# customJS = ["js/custom.js", "js/custom1.js"]  # Custom JS scripts.
+
+# Nav.
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/stevenwadejr"
+
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://twitter.com/stevenwadejr"
+
+[[params.social]]
+name = "RSS"
+icon = "rss"
+url = "/index.xml"
+
+[taxonomies]
+   tag = "tags"

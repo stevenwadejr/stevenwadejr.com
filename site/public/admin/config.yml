@@ -1,8 +1,10 @@
 backend:
   name: git-gateway
 
+publish_mode: editorial_workflow
+
 media_folder: "site/static/images/article_images" # Folder where user uploaded files should go
-public_folder: "images/article_images"
+public_folder: "/images/article_images"
 
 collections: # A list of collections the CMS should be able to edit
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
