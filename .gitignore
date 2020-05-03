@@ -1,5 +1,5 @@
 node_modules/
 dist/
-
+site/public
 /npm-debug.log
 yarn-error.log
