@@ -1,26 +1,22 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "Steven Wade"
-
-[permalinks]
-  post = "/:year/:month/:day/:title/"
-
-languageCode = "en-us"
-title = "Steven Wade"
 theme = "ink"
 paginate = 5
 
-copyright = "© Copyright notice"
+copyright = "© Steven Wade"
 
 pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
-googleAnalytics = "UA-123-45"
-disqusShortname = "ink-demo"
+googleAnalytics = "UA-30720951-1"
+disqusShortname = "stevenwadejr"
 
 [params]
 	subtitle = "Husband, Father, Software Engineer (in that order)"
+
+	excerptLength = 200
 
 	# Optional 64x64 avatar image.
 	avatar = "/images/profile-pic.jpeg"
@@ -30,16 +26,18 @@ disqusShortname = "ink-demo"
 	
 	featherIconsCDN = true
 
+	#excludedTypes
+
 	mode = "auto" # "dark" or "auto"
 	# customCSS = "css/custom.css"  # Custom CSS applied to default styles.
 	# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
 	# customJS = ["js/custom.js", "js/custom1.js"]  # Custom JS scripts.
 
 # Nav.
-[[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
+#[[menu.main]]
+#name = "Home"
+#url = "/"
+#weight = 1
 
 
 [[params.social]]
@@ -58,4 +56,7 @@ icon = "rss"
 url = "/index.xml"
 
 [taxonomies]
-   tag = "tags"
+	tag = "tags"
+
+[permalinks]
+	post = "/:year/:month/:day/:title/"
