@@ -9,6 +9,7 @@ copyright = "© Steven Wade"
 pygmentsstyle = "vs"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
+pygmentsUseClasses = true
 
 googleAnalytics = "UA-30720951-1"
 disqusShortname = "stevenwadejr"
