@@ -52,6 +52,11 @@ icon = "twitter"
 url = "https://twitter.com/stevenwadejr"
 
 [[params.social]]
+name = "Code Talk with Matt & Steven (podcast)"
+icon = "mic"
+url = "https://codetalk.simplecast.com"
+
+[[params.social]]
 name = "RSS"
 icon = "rss"
 url = "/index.xml"
