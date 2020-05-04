@@ -1,7 +1,6 @@
 ---
 title: "TIL how to use preg_filter() to add a prefix or suffix to array elements"
 date: 2020-05-02T22:17:47-04:00
-draft: true
 tags:
   - QuickTip
 ---
