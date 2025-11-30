@@ -12,6 +12,9 @@ enableGitInfo = false
 enableEmoji = true
 mainSections = ["posts"]
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
 
 # -------------------------------------------------------------------------------------
 # Menu Configuration
