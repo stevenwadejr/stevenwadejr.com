@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Engineering - Category - Steven Wade</title>
+    <link>http://localhost:1313/engineering/</link>
+    <description>Steven Wade</description>
+    <generator>Hugo 0.150.0 &amp; FixIt v0.3.20</generator>
+    <language>en-US</language>
+    <copyright>© Steven Wade Jr. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 01 Mar 2024 19:54:51 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mapping CSS Color Names to RGB and Hex Codes</title>
+      <link>http://localhost:1313/2024/03/01/mapping-css-color-names-to-rgb-and-hex-codes/</link>
+      <pubDate>Fri, 01 Mar 2024 19:54:51 +0000</pubDate>
+      <guid>http://localhost:1313/2024/03/01/mapping-css-color-names-to-rgb-and-hex-codes/</guid>
+      <category domain="http://localhost:1313/engineering/">Engineering</category>
+      <description>&lt;p&gt;I recently found myself needing to enforce color values in a hex code format after discovering a mix of hex codes and CSS color names in my data. The easiest way to do this was to build a static map. My application is built with PHP so I needed to get the full list of CSS color names as listed on the &lt;a href=&#34;https://www.w3.org/TR/css-color-4/#named-colors&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;W3&amp;rsquo;s website&lt;/a&gt; into an associative PHP array.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Call Recording Disclosure with Twilio</title>
+      <link>http://localhost:1313/2024/02/29/call-recording-disclosure-with-twilio/</link>
+      <pubDate>Thu, 29 Feb 2024 14:00:34 +0000</pubDate>
+      <guid>http://localhost:1313/2024/02/29/call-recording-disclosure-with-twilio/</guid>
+      <category domain="http://localhost:1313/engineering/">Engineering</category>
+      <description>&lt;p&gt;There may be instances where you want to play audio (a recording) or a message with Twilio before a call connects - such as a message &lt;a href=&#34;https://help.twilio.com/articles/360011522553&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;disclosing&lt;/a&gt; that the call is being recorded.&lt;/p&gt;&#xA;&lt;p&gt;For incoming calls, this can easily be accomplished by putting a &lt;code&gt;&amp;lt;Say&amp;gt;&lt;/code&gt; or &lt;code&gt;&amp;lt;Play&amp;gt;&lt;/code&gt; verb in your TwiML before dialing the intended application or party. But for outgoing calls, how do you ensure a message or recording is played to someone as soon as they answer the call?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Environment Aware Sessions in SSH</title>
+      <link>http://localhost:1313/2021/02/11/environment-aware-sessions-in-ssh/</link>
+      <pubDate>Thu, 11 Feb 2021 21:46:51 +0000</pubDate>
+      <guid>http://localhost:1313/2021/02/11/environment-aware-sessions-in-ssh/</guid>
+      <category domain="http://localhost:1313/engineering/">Engineering</category>
+      <description>&lt;p&gt;In my first week on the job as a software developer, I deleted an entire table&amp;rsquo;s worth of data from a client&amp;rsquo;s database. Luckily, we had a backup from the night before and that table was low traffic. What happened was that I &lt;em&gt;thought&lt;/em&gt; I was on the staging server and I was doing some testing and needed to clear out the existing data. I was not on staging. I was on production. I learned a valuable lesson and I was determined never to make the same mistake again.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Legacy Code Should Be Respected, Not Hated</title>
+      <link>http://localhost:1313/2021/01/12/legacy-code-should-be-respected-not-hated/</link>
+      <pubDate>Tue, 12 Jan 2021 16:14:08 +0000</pubDate>
+      <guid>http://localhost:1313/2021/01/12/legacy-code-should-be-respected-not-hated/</guid>
+      <category domain="http://localhost:1313/engineering/">Engineering</category>
+      <description>&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/wp-content/uploads/sites/2/2021/01/0auaykiufna61-1024x713.jpg&#34;&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;Developers hate legacy code. It&amp;rsquo;s dirty, it&amp;rsquo;s crowded, it&amp;rsquo;s ugly, it&amp;rsquo;s messy, it&amp;rsquo;s&amp;hellip; old. But we shouldn&amp;rsquo;t have a negative outlook on legacy or old code. It&amp;rsquo;s there for a reason, we just need to appreciate that reason.&lt;/p&gt;&#xA;&lt;p&gt;When starting a new job and getting your first look at the legacy codebase, it&amp;rsquo;s easy to be frightened or disgusted. If the code has been around for a long time (in Internet years), it probably doesn&amp;rsquo;t meet modern style guides or follow modern practices. We can easily look at this code and deem it inferior to the code that is being written presently. To do so, though, is to disrespect the developers and the decisions that came before us.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Using PHP&#39;s preg_filter to Easily Subdivide Arrays</title>
+      <link>http://localhost:1313/2020/12/29/using-phps-preg_filter-to-easily-subdivide-arrays/</link>
+      <pubDate>Tue, 29 Dec 2020 14:51:32 +0000</pubDate>
+      <guid>http://localhost:1313/2020/12/29/using-phps-preg_filter-to-easily-subdivide-arrays/</guid>
+      <category domain="http://localhost:1313/engineering/">Engineering</category>
+      <description>&lt;p&gt;PHP&amp;rsquo;s &lt;a href=&#34;https://www.php.net/manual/en/function.preg-filter.php&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;&lt;code&gt;preg_filter&lt;/code&gt;&lt;/a&gt; function is great for filtering array elements that match a given expression. The official documentation states that the function &amp;ldquo;only returns the (possibly transformed) subjects where there was a match&amp;rdquo; meaning if no elements match the given pattern, an empty array is returned (when dealing with an array of course).&lt;/p&gt;&#xA;&lt;p&gt;For example, take an array of multiple type of entity types and their IDs:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ids = [123, &amp;#39;team:4&amp;#39;, 52, &amp;#39;pond:16&amp;#39;, &amp;#39;team:12&amp;#39;, 6];&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;In the array above, we have users (integer IDs), teams (prefixed by &amp;ldquo;team:&amp;rdquo;) and a &amp;ldquo;pond&amp;rdquo; entity prefixed by &amp;ldquo;pond:&amp;rdquo;. If we want to process teams and ponds we could use a traditional loop checking for prefixes and parsing out the integer IDs like so:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TIL how to use preg_filter() to add a prefix or suffix to array elements</title>
+      <link>http://localhost:1313/2020/05/02/til-how-to-use-preg_filter-to-add-a-prefix-or-suffix-to-array-elements/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2020/05/02/til-how-to-use-preg_filter-to-add-a-prefix-or-suffix-to-array-elements/</guid>
+      <category domain="http://localhost:1313/engineering/">Engineering</category>
+      <description>&lt;p&gt;You can add a prefix or suffix to every element of an array succinctly using &lt;code&gt;preg_filter()&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;?php&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ids = range(1, 5);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$prefixedIds = preg_filter(&amp;#39;/^/&amp;#39;, &amp;#39;prefix_&amp;#39;, $ids);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$suffixedIds = preg_filter(&amp;#39;/$/&amp;#39;, &amp;#39;_suffix&amp;#39;, $ids);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;print_r($prefixedIds);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;print_r($suffixedIds);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;The print statements above will output:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Array&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;(&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    [0] =&amp;gt; prefix_1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    [1] =&amp;gt; prefix_2&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    [2] =&amp;gt; prefix_3&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    [3] =&amp;gt; prefix_4&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    [4] =&amp;gt; prefix_5&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Array&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;(&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    [0] =&amp;gt; 1_suffix&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    [1] =&amp;gt; 2_suffix&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    [2] =&amp;gt; 3_suffix&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    [3] =&amp;gt; 4_suffix&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    [4] =&amp;gt; 5_suffix&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;Simple and clean solution for prefixing or appending to every element in an array.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Readability Counts</title>
+      <link>http://localhost:1313/2018/09/18/readability-counts/</link>
+      <pubDate>Tue, 18 Sep 2018 18:21:00 +0000</pubDate>
+      <guid>http://localhost:1313/2018/09/18/readability-counts/</guid>
+      <category domain="http://localhost:1313/engineering/">Engineering</category>
+      <description>&lt;p&gt;&amp;ldquo;Any fool can write code that a computer can understand. Good programmers write code that humans can understand.&amp;rdquo; - &lt;a href=&#34;https://martinfowler.com/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Martin Fowler&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;I have a friend who once told me that it&amp;rsquo;s our jobs to write code that can be maintained. When you open up someone else&amp;rsquo;s code, or even your own from a while back, the clock immediately starts ticking. The more time you have to think about what code is doing or what variable &lt;code&gt;p&lt;/code&gt; stands for, the more time you&amp;rsquo;re wasting and the more money your employer is spending.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HubSpot&#39;s Secret Shadow Proxy</title>
+      <link>http://localhost:1313/2017/06/01/hubspots-secret-shadow-proxy/</link>
+      <pubDate>Thu, 01 Jun 2017 14:17:00 +0000</pubDate>
+      <guid>http://localhost:1313/2017/06/01/hubspots-secret-shadow-proxy/</guid>
+      <category domain="http://localhost:1313/engineering/">Engineering</category>
+      <description>&lt;p&gt;I’ve got beef with the &lt;a href=&#34;https://developers.hubspot.com/docs/overview&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;HubSpot API&lt;/a&gt; and it has its fair share of issues. I’ll do another post in the future discussing those more, but that’s not the focus of this post.&lt;/p&gt;&#xA;&lt;p&gt;HubSpot has a secret, and I’ve found it out.&lt;/p&gt;&#xA;&lt;p&gt;Ok, so it’s not the coolest secret in the world. It’s not like I’ve found a backdoor into their mainframe or detected a glitch in the Matrix or anything, but I thought it was pretty cool. So I’d like to share with the world.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Starting a User Group</title>
+      <link>http://localhost:1313/2016/03/03/starting-a-user-group/</link>
+      <pubDate>Thu, 03 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2016/03/03/starting-a-user-group/</guid>
+      <category domain="http://localhost:1313/engineering/">Engineering</category>
+      <description>&lt;p&gt;A few weeks ago, a friend of mine, &lt;a href=&#34;https://twitter.com/stauffermatt&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Matt Stauffer&lt;/a&gt; invited me on his podcast the &lt;a href=&#34;http://www.fiveminutegeekshow.com/75&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;Five Minute Geek Show&lt;/a&gt; to talk about starting a user group. This gave me cause to reflect on the past two years and the successes they&amp;rsquo;ve brought and the lessons I’ve learned while starting and running a user group.&lt;/p&gt;&#xA;&lt;p&gt;Officially, &lt;a href=&#34;http://upstatephp.com/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;UpstatePHP&lt;/a&gt; started in March 2014, however, it actually began 4 months earlier with an idea.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>&#34;Don&#39;t Bind Yourself To A Framework&#34; or: Shut Up and Build Your Shit</title>
+      <link>http://localhost:1313/2013/10/31/dont-bind-yourself-to-a-framework-or-shut-up-and-build-your-shit/</link>
+      <pubDate>Thu, 31 Oct 2013 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2013/10/31/dont-bind-yourself-to-a-framework-or-shut-up-and-build-your-shit/</guid>
+      <category domain="http://localhost:1313/engineering/">Engineering</category>
+      <description>&lt;p&gt;It’s almost November and boy has 2013 been a rough year for PHP. From what I gather, it’s “hip” to hate PHP right now. With so many outsiders, and insiders, fighting and bashing the language and each other as if they were high school rivals, I’ve been rather surprised and elated to see the formation of the &lt;a href=&#34;http://www.php-fig.org/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;PHP FIG&lt;/a&gt; and the work they’ve done with the PSR standard. Having so many library and framework authors come together, agree upon a standard way of doing things in order to make their code interoperable, and then actually upgrading their code to meet said standard is an amazing feat that just a short while ago would have seemed impossible.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Build RegEx</title>
+      <link>http://localhost:1313/2013/08/05/build-regex/</link>
+      <pubDate>Mon, 05 Aug 2013 14:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/2013/08/05/build-regex/</guid>
+      <category domain="http://localhost:1313/engineering/">Engineering</category>
+      <description>&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; I&amp;rsquo;ve neglected the project for many years and finally decided to release the domain name. The domain is no longer mine, but the code for the app can be found on &lt;a href=&#34;https://github.com/stevenwadejr/Build-Regex&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Regular Expressions, does anyone actually like them? I suck at them. If you’re like me at all, you struggle with them too. When I need to use regular expressions, I spend countless amounts of time on &lt;a href=&#34;http://regexpal.com/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;RegexPal&lt;/a&gt; trying to find just the right combination. That’s why I built Build RegEx.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

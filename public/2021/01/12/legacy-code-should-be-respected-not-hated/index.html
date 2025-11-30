@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en-US">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Legacy Code Should Be Respected, Not Hated - Steven Wade</title><meta name="author" content="Steven Wade">
+<meta name="description" content=" Developers hate legacy code. It&rsquo;s dirty, it&rsquo;s crowded, it&rsquo;s ugly, it&rsquo;s messy, it&rsquo;s&hellip; old. But we shouldn&rsquo;t have a negative outlook on legacy or old code. It&rsquo;s there for a reason, we just need to appreciate that reason.
+When starting a new job and getting your first look at the legacy codebase, it&rsquo;s easy to be frightened or disgusted. If the code has been around for a long time (in Internet years), it probably doesn&rsquo;t meet modern style guides or follow modern practices. We can easily look at this code and deem it inferior to the code that is being written presently. To do so, though, is to disrespect the developers and the decisions that came before us.
+">
+  <meta itemprop="name" content="Legacy Code Should Be Respected, Not Hated">
+  <meta itemprop="description" content="Developers hate legacy code. It’s dirty, it’s crowded, it’s ugly, it’s messy, it’s… old. But we shouldn’t have a negative outlook on legacy or old code. It’s there for a reason, we just need to appreciate that reason.
+When starting a new job and getting your first look at the legacy codebase, it’s easy to be frightened or disgusted. If the code has been around for a long time (in Internet years), it probably doesn’t meet modern style guides or follow modern practices. We can easily look at this code and deem it inferior to the code that is being written presently. To do so, though, is to disrespect the developers and the decisions that came before us.">
+  <meta itemprop="datePublished" content="2021-01-12T16:14:08+00:00">
+  <meta itemprop="dateModified" content="2021-01-12T16:14:08+00:00">
+  <meta itemprop="wordCount" content="382">
+  <meta itemprop="keywords" content="Engineering"><meta property="og:url" content="http://localhost:1313/2021/01/12/legacy-code-should-be-respected-not-hated/">
+  <meta property="og:site_name" content="Steven Wade">
+  <meta property="og:title" content="Legacy Code Should Be Respected, Not Hated">
+  <meta property="og:description" content="Developers hate legacy code. It’s dirty, it’s crowded, it’s ugly, it’s messy, it’s… old. But we shouldn’t have a negative outlook on legacy or old code. It’s there for a reason, we just need to appreciate that reason.
+When starting a new job and getting your first look at the legacy codebase, it’s easy to be frightened or disgusted. If the code has been around for a long time (in Internet years), it probably doesn’t meet modern style guides or follow modern practices. We can easily look at this code and deem it inferior to the code that is being written presently. To do so, though, is to disrespect the developers and the decisions that came before us.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-01-12T16:14:08+00:00">
+    <meta property="article:modified_time" content="2021-01-12T16:14:08+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Legacy Code Should Be Respected, Not Hated">
+  <meta name="twitter:description" content="Developers hate legacy code. It’s dirty, it’s crowded, it’s ugly, it’s messy, it’s… old. But we shouldn’t have a negative outlook on legacy or old code. It’s there for a reason, we just need to appreciate that reason.
+When starting a new job and getting your first look at the legacy codebase, it’s easy to be frightened or disgusted. If the code has been around for a long time (in Internet years), it probably doesn’t meet modern style guides or follow modern practices. We can easily look at this code and deem it inferior to the code that is being written presently. To do so, though, is to disrespect the developers and the decisions that came before us.">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/2021/01/12/legacy-code-should-be-respected-not-hated/" title="Legacy Code Should Be Respected, Not Hated - Steven Wade" /><link rel="prev" type="text/html" href="http://localhost:1313/2020/12/29/using-phps-preg_filter-to-easily-subdivide-arrays/" title="Using PHP&#39;s preg_filter to Easily Subdivide Arrays" /><link rel="next" type="text/html" href="http://localhost:1313/2021/02/11/environment-aware-sessions-in-ssh/" title="Environment Aware Sessions in SSH" /><link rel="alternate" type="text/markdown" href="http://localhost:1313/2021/01/12/legacy-code-should-be-respected-not-hated/index.md" title="Legacy Code Should Be Respected, Not Hated - Steven Wade"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Legacy Code Should Be Respected, Not Hated",
+    "inLanguage": "en-US",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/2021\/01\/12\/legacy-code-should-be-respected-not-hated\/"
+    },"genre": "posts","wordcount":  382 ,
+    "url": "http:\/\/localhost:1313\/2021\/01\/12\/legacy-code-should-be-respected-not-hated\/","datePublished": "2021-01-12T16:14:08+00:00","dateModified": "2021-01-12T16:14:08+00:00","license": "© Steven Wade Jr. All rights reserved.","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Steven Wade"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Steven Wade"><span class="header-title-text">Steven Wade</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/engineering/"><i class="fa-solid fa-code fa-fw fa-sm" aria-hidden="true"></i> Engineering</a></li><li class="menu-item">
+              <a class="menu-link" href="/professional/"><i class="fa-solid fa-user-tie fa-fw fa-sm" aria-hidden="true"></i> Professional</a></li><li class="menu-item">
+              <a class="menu-link" href="/baking-cooking/"><i class="fa-solid fa-kitchen-set fa-fw fa-sm" aria-hidden="true"></i> Baking &amp; Cooking</a></li><li class="menu-item">
+              <a class="menu-link" href="/crafting/"><i class="fa-solid fa-mitten fa-fw fa-sm" aria-hidden="true"></i> Crafting</a></li><li class="menu-item">
+              <a class="menu-link" href="/personal/"><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> Personal</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Steven Wade"><span class="header-title-text">Steven Wade</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/engineering/"><i class="fa-solid fa-code fa-fw fa-sm" aria-hidden="true"></i> Engineering</a></li><li class="menu-item"><a class="menu-link" href="/professional/"><i class="fa-solid fa-user-tie fa-fw fa-sm" aria-hidden="true"></i> Professional</a></li><li class="menu-item"><a class="menu-link" href="/baking-cooking/"><i class="fa-solid fa-kitchen-set fa-fw fa-sm" aria-hidden="true"></i> Baking &amp; Cooking</a></li><li class="menu-item"><a class="menu-link" href="/crafting/"><i class="fa-solid fa-mitten fa-fw fa-sm" aria-hidden="true"></i> Crafting</a></li><li class="menu-item"><a class="menu-link" href="/personal/"><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> Personal</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Legacy Code Should Be Respected, Not Hated</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-included-in">&nbsp;included in <a href="/engineering/" class="post-category" title="Category - Engineering"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Engineering</a></span></div><div class="post-meta-line"><span title="published on 2021-01-12 16:14:08"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2021-01-12">2021-01-12</time></span>&nbsp;<span title="382 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>2 minutes</span>&nbsp;</div>
+    </div><div class="content" id="content"><figure><img src="/wp-content/uploads/sites/2/2021/01/0auaykiufna61-1024x713.jpg">
+</figure>
+
+<p>Developers hate legacy code. It&rsquo;s dirty, it&rsquo;s crowded, it&rsquo;s ugly, it&rsquo;s messy, it&rsquo;s&hellip; old. But we shouldn&rsquo;t have a negative outlook on legacy or old code. It&rsquo;s there for a reason, we just need to appreciate that reason.</p>
+<p>When starting a new job and getting your first look at the legacy codebase, it&rsquo;s easy to be frightened or disgusted. If the code has been around for a long time (in Internet years), it probably doesn&rsquo;t meet modern style guides or follow modern practices. We can easily look at this code and deem it inferior to the code that is being written presently. To do so, though, is to disrespect the developers and the decisions that came before us.</p>
+<blockquote>
+<p>&quot; <em>Legacy code is established</em>&quot;</p></blockquote>
+<p>We need to reframe our minds and stop hating and disrespecting legacy code and instead appreciate it for what it is: legacy code is established. The lines you&rsquo;re judging are there for a reason; they have lasted the test of time; they have served a purpose. Most importantly of all, they have given you a job. Without those &ldquo;old&rdquo; or &ldquo;ugly&rdquo; lines of code, you would not have the job that you&rsquo;re using now to put down that very code.</p>
+<p>Programmers don&rsquo;t set out with the intention of writing bad or ugly code. They don&rsquo;t sit down and think of the most convoluted solution they can write. Code becomes complex, intertwined, and unpleasant over time. Each feature begins with a single typed character and builds from there. As the business grows and its needs change, so does the code.</p>
+<p>A friend of mine once said that &ldquo;bad&rdquo; code is the product of not enough time, poorly defined requirements, or inexperience, not necessarily a bad programmer. Business moves fast and as developers, we&rsquo;re constantly working against the clock to release features to draw in customers and make more money. It&rsquo;s for these reasons that we must change how we think about and see legacy code - it is not something to be looked down upon, it is a legacy that was passed down to us that we must now carry forward for the next generation of programmers. When we are handed a legacy codebase, it becomes ours to shepherd forward.</p>
+<p>Build and improve upon the legacy, but overall, respect it.</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2021-01-12 16:14:08">Updated on 2021-01-12&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/2021/01/12/legacy-code-should-be-respected-not-hated/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span><span><a href="vscode://file//Users/steven/Code/stevenwadejr/stevenwadejr_com/content/posts/legacy-code-should-be-respected-not-hated.md" title="Open in editor"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Open in editor</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://localhost:1313/2021/01/12/legacy-code-should-be-respected-not-hated/" data-title="Legacy Code Should Be Respected, Not Hated"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/2021/01/12/legacy-code-should-be-respected-not-hated/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/2021/01/12/legacy-code-should-be-respected-not-hated/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Pinterest" data-sharer="pinterest" data-url="http://localhost:1313/2021/01/12/legacy-code-should-be-respected-not-hated/"><i class="fa-brands fa-pinterest fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/2021/01/12/legacy-code-should-be-respected-not-hated/" data-title="Legacy Code Should Be Respected, Not Hated"><i class="fa-brands fa-hacker-news fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://localhost:1313/2021/01/12/legacy-code-should-be-respected-not-hated/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/2020/12/29/using-phps-preg_filter-to-easily-subdivide-arrays/" class="post-nav-item" rel="prev" title="Using PHP&#39;s Preg_filter to Easily Subdivide Arrays"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Using PHP&#39;s Preg_filter to Easily Subdivide Arrays</a><a href="/2021/02/11/environment-aware-sessions-in-ssh/" class="post-nav-item" rel="next" title="Environment Aware Sessions in SSH">Environment Aware Sessions in SSH<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Steven Wade</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/search.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"version":"v0.3.20"};console.log('Page config:', window.config);</script><script src="/js/theme.min.js" defer></script></body>
+</html>

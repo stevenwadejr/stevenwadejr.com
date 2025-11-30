@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Side Project - Tag - Steven Wade</title>
+    <link>http://localhost:1313/tags/side-project/</link>
+    <description>Steven Wade</description>
+    <generator>Hugo 0.150.0 &amp; FixIt v0.3.20</generator>
+    <language>en-US</language>
+    <copyright>© Steven Wade Jr. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 05 Aug 2013 14:30:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/side-project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build RegEx</title>
+      <link>http://localhost:1313/2013/08/05/build-regex/</link>
+      <pubDate>Mon, 05 Aug 2013 14:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/2013/08/05/build-regex/</guid>
+      <category domain="http://localhost:1313/engineering/">Engineering</category>
+      <description>&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; I&amp;rsquo;ve neglected the project for many years and finally decided to release the domain name. The domain is no longer mine, but the code for the app can be found on &lt;a href=&#34;https://github.com/stevenwadejr/Build-Regex&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Regular Expressions, does anyone actually like them? I suck at them. If you’re like me at all, you struggle with them too. When I need to use regular expressions, I spend countless amounts of time on &lt;a href=&#34;http://regexpal.com/&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;RegexPal&lt;/a&gt; trying to find just the right combination. That’s why I built Build RegEx.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

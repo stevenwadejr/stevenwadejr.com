@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web - Tag - Steven Wade</title>
+    <link>http://localhost:1313/tags/web/</link>
+    <description>Steven Wade</description>
+    <generator>Hugo 0.150.0 &amp; FixIt v0.3.20</generator>
+    <language>en-US</language>
+    <copyright>© Steven Wade Jr. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 29 Feb 2024 14:00:34 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Call Recording Disclosure with Twilio</title>
+      <link>http://localhost:1313/2024/02/29/call-recording-disclosure-with-twilio/</link>
+      <pubDate>Thu, 29 Feb 2024 14:00:34 +0000</pubDate>
+      <guid>http://localhost:1313/2024/02/29/call-recording-disclosure-with-twilio/</guid>
+      <category domain="http://localhost:1313/engineering/">Engineering</category>
+      <description>&lt;p&gt;There may be instances where you want to play audio (a recording) or a message with Twilio before a call connects - such as a message &lt;a href=&#34;https://help.twilio.com/articles/360011522553&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;disclosing&lt;/a&gt; that the call is being recorded.&lt;/p&gt;&#xA;&lt;p&gt;For incoming calls, this can easily be accomplished by putting a &lt;code&gt;&amp;lt;Say&amp;gt;&lt;/code&gt; or &lt;code&gt;&amp;lt;Play&amp;gt;&lt;/code&gt; verb in your TwiML before dialing the intended application or party. But for outgoing calls, how do you ensure a message or recording is played to someone as soon as they answer the call?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

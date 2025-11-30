@@ -1,0 +1,55 @@
+{{- define "title" -}}
+    {{- .Site.Title -}}
+    {{- if .Site.Params.indexWithSubtitle | and .Site.Params.header.subtitle.name -}}
+        {{- printf " - %v" .Site.Params.header.subtitle.name -}}
+    {{- end -}}
+{{- end -}}
+
+{{- define "content" -}}
+    {{- $params := partial "function/params.html" -}}
+
+
+    <div class="page category home posts">
+
+        <div class="header">
+            {{- /* Title */ -}}
+            <h1 class="single-title animate__animated animate__pulse animate__faster">
+                {{- $category := .Title -}}
+                {{- $menuItem := index (where .Site.Menus.main "Identifier" (lower $category)) 0 -}}
+                {{- $icon := "" -}}
+                {{- with $menuItem }}
+                    {{- with .Params.icon }}
+                        {{- $icon = . -}}
+                    {{- end }}
+                {{- end }}
+                
+                {{- dict "Class" (add $icon " fa-fw me-1") | partial "plugin/icon.html" -}}
+                {{- title ($category) }} <sup>{{
+                    .Pages.Len }}</sup>
+            </h1>
+        </div>
+
+        {{- /* Content */ -}}
+        {{- if .Content -}}
+        <div class="single">
+            <div class="content" id="content">
+                {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome"
+                $params.fontawesome | partial "function/content.html" | safeHTML -}}
+            </div>
+        </div>
+        {{- end -}}
+
+        {{- /* Posts */ -}}
+        {{ $paginator := .Paginate (where .Pages "Params.categories" "intersect" (slice .Title)) }}
+        {{- /* Paginate */ -}}
+        {{ if gt $paginator.Pages.Len 0 }}
+            {{ range $paginator.Pages }}
+                {{- .Render "summary" -}}
+            {{- end -}}
+            {{- partial "paginator.html" . -}}
+        {{ else }}
+            <p>No posts yet in this category. Check back soon.</p>
+        {{ end }}
+
+    </div>
+{{- end -}}

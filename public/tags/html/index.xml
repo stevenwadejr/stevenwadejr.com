@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Html - Tag - Steven Wade</title>
+    <link>http://localhost:1313/tags/html/</link>
+    <description>Steven Wade</description>
+    <generator>Hugo 0.150.0 &amp; FixIt v0.3.20</generator>
+    <language>en-US</language>
+    <copyright>© Steven Wade Jr. All rights reserved.</copyright>
+    <lastBuildDate>Fri, 01 Mar 2024 19:54:51 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mapping CSS Color Names to RGB and Hex Codes</title>
+      <link>http://localhost:1313/2024/03/01/mapping-css-color-names-to-rgb-and-hex-codes/</link>
+      <pubDate>Fri, 01 Mar 2024 19:54:51 +0000</pubDate>
+      <guid>http://localhost:1313/2024/03/01/mapping-css-color-names-to-rgb-and-hex-codes/</guid>
+      <category domain="http://localhost:1313/engineering/">Engineering</category>
+      <description>&lt;p&gt;I recently found myself needing to enforce color values in a hex code format after discovering a mix of hex codes and CSS color names in my data. The easiest way to do this was to build a static map. My application is built with PHP so I needed to get the full list of CSS color names as listed on the &lt;a href=&#34;https://www.w3.org/TR/css-color-4/#named-colors&#34;target=&#34;_blank&#34; rel=&#34;external nofollow noopener noreferrer&#34;&gt;W3&amp;rsquo;s website&lt;/a&gt; into an associative PHP array.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

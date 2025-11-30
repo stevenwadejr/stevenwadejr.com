@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Crafting - Category - Steven Wade</title>
+    <link>http://localhost:1313/crafting/</link>
+    <description>Steven Wade</description>
+    <generator>Hugo 0.150.0 &amp; FixIt v0.3.20</generator>
+    <language>en-US</language>
+    <copyright>© Steven Wade Jr. All rights reserved.</copyright>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:1313/crafting/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

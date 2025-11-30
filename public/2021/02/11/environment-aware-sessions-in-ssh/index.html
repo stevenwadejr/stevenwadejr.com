@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en-US">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Environment Aware Sessions in SSH - Steven Wade</title><meta name="author" content="Steven Wade">
+<meta name="description" content="In my first week on the job as a software developer, I deleted an entire table&rsquo;s worth of data from a client&rsquo;s database. Luckily, we had a backup from the night before and that table was low traffic. What happened was that I thought I was on the staging server and I was doing some testing and needed to clear out the existing data. I was not on staging. I was on production. I learned a valuable lesson and I was determined never to make the same mistake again.
+">
+  <meta itemprop="name" content="Environment Aware Sessions in SSH">
+  <meta itemprop="description" content="In my first week on the job as a software developer, I deleted an entire table’s worth of data from a client’s database. Luckily, we had a backup from the night before and that table was low traffic. What happened was that I thought I was on the staging server and I was doing some testing and needed to clear out the existing data. I was not on staging. I was on production. I learned a valuable lesson and I was determined never to make the same mistake again.">
+  <meta itemprop="datePublished" content="2021-02-11T21:46:51+00:00">
+  <meta itemprop="dateModified" content="2021-02-11T21:46:51+00:00">
+  <meta itemprop="wordCount" content="648">
+  <meta itemprop="keywords" content="Engineering"><meta property="og:url" content="http://localhost:1313/2021/02/11/environment-aware-sessions-in-ssh/">
+  <meta property="og:site_name" content="Steven Wade">
+  <meta property="og:title" content="Environment Aware Sessions in SSH">
+  <meta property="og:description" content="In my first week on the job as a software developer, I deleted an entire table’s worth of data from a client’s database. Luckily, we had a backup from the night before and that table was low traffic. What happened was that I thought I was on the staging server and I was doing some testing and needed to clear out the existing data. I was not on staging. I was on production. I learned a valuable lesson and I was determined never to make the same mistake again.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-02-11T21:46:51+00:00">
+    <meta property="article:modified_time" content="2021-02-11T21:46:51+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Environment Aware Sessions in SSH">
+  <meta name="twitter:description" content="In my first week on the job as a software developer, I deleted an entire table’s worth of data from a client’s database. Luckily, we had a backup from the night before and that table was low traffic. What happened was that I thought I was on the staging server and I was doing some testing and needed to clear out the existing data. I was not on staging. I was on production. I learned a valuable lesson and I was determined never to make the same mistake again.">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/2021/02/11/environment-aware-sessions-in-ssh/" title="Environment Aware Sessions in SSH - Steven Wade" /><link rel="prev" type="text/html" href="http://localhost:1313/2021/01/12/legacy-code-should-be-respected-not-hated/" title="Legacy Code Should Be Respected, Not Hated" /><link rel="next" type="text/html" href="http://localhost:1313/2021/02/16/youll-never-work-in-this-town-again/" title="&#34;You&#39;ll never work in this town again&#34;" /><link rel="alternate" type="text/markdown" href="http://localhost:1313/2021/02/11/environment-aware-sessions-in-ssh/index.md" title="Environment Aware Sessions in SSH - Steven Wade"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Environment Aware Sessions in SSH",
+    "inLanguage": "en-US",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/2021\/02\/11\/environment-aware-sessions-in-ssh\/"
+    },"genre": "posts","wordcount":  648 ,
+    "url": "http:\/\/localhost:1313\/2021\/02\/11\/environment-aware-sessions-in-ssh\/","datePublished": "2021-02-11T21:46:51+00:00","dateModified": "2021-02-11T21:46:51+00:00","license": "© Steven Wade Jr. All rights reserved.","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Steven Wade"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Steven Wade"><span class="header-title-text">Steven Wade</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/engineering/"><i class="fa-solid fa-code fa-fw fa-sm" aria-hidden="true"></i> Engineering</a></li><li class="menu-item">
+              <a class="menu-link" href="/professional/"><i class="fa-solid fa-user-tie fa-fw fa-sm" aria-hidden="true"></i> Professional</a></li><li class="menu-item">
+              <a class="menu-link" href="/baking-cooking/"><i class="fa-solid fa-kitchen-set fa-fw fa-sm" aria-hidden="true"></i> Baking &amp; Cooking</a></li><li class="menu-item">
+              <a class="menu-link" href="/crafting/"><i class="fa-solid fa-mitten fa-fw fa-sm" aria-hidden="true"></i> Crafting</a></li><li class="menu-item">
+              <a class="menu-link" href="/personal/"><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> Personal</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Steven Wade"><span class="header-title-text">Steven Wade</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/engineering/"><i class="fa-solid fa-code fa-fw fa-sm" aria-hidden="true"></i> Engineering</a></li><li class="menu-item"><a class="menu-link" href="/professional/"><i class="fa-solid fa-user-tie fa-fw fa-sm" aria-hidden="true"></i> Professional</a></li><li class="menu-item"><a class="menu-link" href="/baking-cooking/"><i class="fa-solid fa-kitchen-set fa-fw fa-sm" aria-hidden="true"></i> Baking &amp; Cooking</a></li><li class="menu-item"><a class="menu-link" href="/crafting/"><i class="fa-solid fa-mitten fa-fw fa-sm" aria-hidden="true"></i> Crafting</a></li><li class="menu-item"><a class="menu-link" href="/personal/"><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> Personal</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Environment Aware Sessions in SSH</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-included-in">&nbsp;included in <a href="/engineering/" class="post-category" title="Category - Engineering"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Engineering</a></span></div><div class="post-meta-line"><span title="published on 2021-02-11 21:46:51"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2021-02-11">2021-02-11</time></span>&nbsp;<span title="648 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 700 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>4 minutes</span>&nbsp;</div>
+    </div><div class="content" id="content"><p>In my first week on the job as a software developer, I deleted an entire table&rsquo;s worth of data from a client&rsquo;s database. Luckily, we had a backup from the night before and that table was low traffic. What happened was that I <em>thought</em> I was on the staging server and I was doing some testing and needed to clear out the existing data. I was not on staging. I was on production. I learned a valuable lesson and I was determined never to make the same mistake again.</p>
+<p>Enter, color coded SSH sessions:</p>
+<figure><img src="/wp-content/uploads/sites/2/2021/02/EB9DL-%5FXkAEbAYp.png">
+</figure>
+
+<p>I developed color schemes for different environments that would easily stand out and alert me of where I was.</p>
+<p>For my local environment, I use a black background with green text. This is part Matrix and part me not having a computer growing up in the 90s and missing out on the nostalgia of pre-GUI terminals. On staging, I use a blue/violet mix that isn&rsquo;t jarring to the eye or mind but still catches my attention and makes me aware of the environment. Lastly, for production-based servers I use a red background which definitely stands for &ldquo;ALERT, whatever you do will have consequences!&rdquo;</p>
+<p>To color code the environments I use separate profiles within <a href="https://iterm2.com/documentation-dynamic-profiles.html"target="_blank" rel="external nofollow noopener noreferrer">iTerm</a>. Once I customized the profiles to my liking, I needed a way to easily and dynamically switch between them. I did some googling and came across a bash function on <a href="https://stackoverflow.com/a/53683101"target="_blank" rel="external nofollow noopener noreferrer">StackOverflow</a> called it2prof. Essentially this function is a shortcut to an iTerm command to switch profiles but the function is a lot cleaner to use: <code>it2prof staging</code>. That command will then switch the current iTerm window&rsquo;s profile to the profile and color scheme of my &ldquo;staging&rdquo; profile.</p>
+<p>To connect to an environment, I use shortcuts and aliases to run my commands at once, for instance: <code>ssh staging</code> aliases to <code>it2prof staging &amp;&amp; ssh steven@stage01</code> which will change the terminal profile and then ssh into my staging server.</p>
+<p>This level of safe guarding will likely do for most people, however, I am paranoid and now I have multiple production environments to deal with. For instance, at work, we use a control box to do our releases, but we also have individual production servers that you can log into. So I wanted an extra notification of where I was to pop up.</p>
+<figure><img src="/wp-content/uploads/sites/2/2021/01/staging-1024x383.png">
+</figure>
+
+<figure><img src="/wp-content/uploads/sites/2/2021/01/control-box-1024x148.png">
+</figure>
+
+<figure><img src="/wp-content/uploads/sites/2/2021/01/production-1024x174.png">
+</figure>
+
+<p>Text to ASCII! I wanted a proper warning message to pop up and be as in my face as possible to let me know which boxes I was on. I used <a href="http://ascii.mastervb.net/"target="_blank" rel="external nofollow noopener noreferrer">this tool</a> to convert my text to ASCII art which I then saved to text files either on my local machine or the remote server.</p>
+<p>If you have your own user on a server you could do like what I did on the staging environment and update the .bashrc file to output the contents of a file when your Bash profile is loaded (upon log in). To do this, update your .bashrc file with a line like <code>cat env_msg.txt</code> where &ldquo;env_msg.txt&rdquo; is the text file containing your ASCII art.</p>
+<p>My production servers use different user permissions so instead, I stored those warning files locally and just updated my aliases. For work, I created a <code>fub</code> (short for <a href="https://www.followupboss.com/"target="_blank" rel="external nofollow noopener noreferrer">Follow Up Boss</a>) function that helps me do various things, one of them being ssh-ing into a server. I simply updated each SSH command with a call to <code>cat</code> my text file like so: <code>it2prof control &amp;&amp; cat /Users/steven/production-warning.txt &amp;&amp; ssh production01</code>. Now all I have to type into my terminal is <code>fub ssh prod01</code> and my terminal profile turns red, I get the boldface production warning, and I&rsquo;m ssh&rsquo;d into the proper machine.</p>
+<p>Now, I&rsquo;m always aware of what machine I&rsquo;m working on and I haven&rsquo;t made the same mistake again as I did all those years ago.</p>
+<p>Do what you need to to guard/help yourself. Remember, stay safe out there.</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2021-02-11 21:46:51">Updated on 2021-02-11&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/2021/02/11/environment-aware-sessions-in-ssh/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span><span><a href="vscode://file//Users/steven/Code/stevenwadejr/stevenwadejr_com/content/posts/environment-aware-sessions-in-ssh.md" title="Open in editor"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Open in editor</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://localhost:1313/2021/02/11/environment-aware-sessions-in-ssh/" data-title="Environment Aware Sessions in SSH"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/2021/02/11/environment-aware-sessions-in-ssh/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/2021/02/11/environment-aware-sessions-in-ssh/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Pinterest" data-sharer="pinterest" data-url="http://localhost:1313/2021/02/11/environment-aware-sessions-in-ssh/"><i class="fa-brands fa-pinterest fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/2021/02/11/environment-aware-sessions-in-ssh/" data-title="Environment Aware Sessions in SSH"><i class="fa-brands fa-hacker-news fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://localhost:1313/2021/02/11/environment-aware-sessions-in-ssh/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/2021/01/12/legacy-code-should-be-respected-not-hated/" class="post-nav-item" rel="prev" title="Legacy Code Should Be Respected, Not Hated"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Legacy Code Should Be Respected, Not Hated</a><a href="/2021/02/16/youll-never-work-in-this-town-again/" class="post-nav-item" rel="next" title="&#34;You&#39;ll Never Work in This Town Again&#34;">&#34;You&#39;ll Never Work in This Town Again&#34;<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Steven Wade</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/search.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"version":"v0.3.20"};console.log('Page config:', window.config);</script><script src="/js/theme.min.js" defer></script></body>
+</html>

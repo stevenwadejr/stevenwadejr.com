@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en-US">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>HubSpot&#39;s Secret Shadow Proxy - Steven Wade</title><meta name="author" content="Steven Wade">
+<meta name="description" content="I’ve got beef with the HubSpot API and it has its fair share of issues. I’ll do another post in the future discussing those more, but that’s not the focus of this post.
+HubSpot has a secret, and I’ve found it out.
+Ok, so it’s not the coolest secret in the world. It’s not like I’ve found a backdoor into their mainframe or detected a glitch in the Matrix or anything, but I thought it was pretty cool. So I’d like to share with the world.
+">
+  <meta itemprop="name" content="HubSpot&#39;s Secret Shadow Proxy">
+  <meta itemprop="description" content="I’ve got beef with the HubSpot API and it has its fair share of issues. I’ll do another post in the future discussing those more, but that’s not the focus of this post.
+HubSpot has a secret, and I’ve found it out.
+Ok, so it’s not the coolest secret in the world. It’s not like I’ve found a backdoor into their mainframe or detected a glitch in the Matrix or anything, but I thought it was pretty cool. So I’d like to share with the world.">
+  <meta itemprop="datePublished" content="2017-06-01T14:17:00+00:00">
+  <meta itemprop="dateModified" content="2017-06-01T14:17:00+00:00">
+  <meta itemprop="wordCount" content="1077">
+  <meta itemprop="keywords" content="Engineering"><meta property="og:url" content="http://localhost:1313/2017/06/01/hubspots-secret-shadow-proxy/">
+  <meta property="og:site_name" content="Steven Wade">
+  <meta property="og:title" content="HubSpot&#39;s Secret Shadow Proxy">
+  <meta property="og:description" content="I’ve got beef with the HubSpot API and it has its fair share of issues. I’ll do another post in the future discussing those more, but that’s not the focus of this post.
+HubSpot has a secret, and I’ve found it out.
+Ok, so it’s not the coolest secret in the world. It’s not like I’ve found a backdoor into their mainframe or detected a glitch in the Matrix or anything, but I thought it was pretty cool. So I’d like to share with the world.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2017-06-01T14:17:00+00:00">
+    <meta property="article:modified_time" content="2017-06-01T14:17:00+00:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="HubSpot&#39;s Secret Shadow Proxy">
+  <meta name="twitter:description" content="I’ve got beef with the HubSpot API and it has its fair share of issues. I’ll do another post in the future discussing those more, but that’s not the focus of this post.
+HubSpot has a secret, and I’ve found it out.
+Ok, so it’s not the coolest secret in the world. It’s not like I’ve found a backdoor into their mainframe or detected a glitch in the Matrix or anything, but I thought it was pretty cool. So I’d like to share with the world.">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/2017/06/01/hubspots-secret-shadow-proxy/" title="HubSpot&#39;s Secret Shadow Proxy - Steven Wade" /><link rel="prev" type="text/html" href="http://localhost:1313/2016/03/03/starting-a-user-group/" title="Starting a User Group" /><link rel="next" type="text/html" href="http://localhost:1313/2018/09/18/readability-counts/" title="Readability Counts" /><link rel="alternate" type="text/markdown" href="http://localhost:1313/2017/06/01/hubspots-secret-shadow-proxy/index.md" title="HubSpot's Secret Shadow Proxy - Steven Wade"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "HubSpot's Secret Shadow Proxy",
+    "inLanguage": "en-US",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/2017\/06\/01\/hubspots-secret-shadow-proxy\/"
+    },"genre": "posts","wordcount":  1077 ,
+    "url": "http:\/\/localhost:1313\/2017\/06\/01\/hubspots-secret-shadow-proxy\/","datePublished": "2017-06-01T14:17:00+00:00","dateModified": "2017-06-01T14:17:00+00:00","license": "© Steven Wade Jr. All rights reserved.","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Steven Wade"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Steven Wade"><span class="header-title-text">Steven Wade</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/engineering/"><i class="fa-solid fa-code fa-fw fa-sm" aria-hidden="true"></i> Engineering</a></li><li class="menu-item">
+              <a class="menu-link" href="/professional/"><i class="fa-solid fa-user-tie fa-fw fa-sm" aria-hidden="true"></i> Professional</a></li><li class="menu-item">
+              <a class="menu-link" href="/baking-cooking/"><i class="fa-solid fa-kitchen-set fa-fw fa-sm" aria-hidden="true"></i> Baking &amp; Cooking</a></li><li class="menu-item">
+              <a class="menu-link" href="/crafting/"><i class="fa-solid fa-mitten fa-fw fa-sm" aria-hidden="true"></i> Crafting</a></li><li class="menu-item">
+              <a class="menu-link" href="/personal/"><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> Personal</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Steven Wade"><span class="header-title-text">Steven Wade</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/engineering/"><i class="fa-solid fa-code fa-fw fa-sm" aria-hidden="true"></i> Engineering</a></li><li class="menu-item"><a class="menu-link" href="/professional/"><i class="fa-solid fa-user-tie fa-fw fa-sm" aria-hidden="true"></i> Professional</a></li><li class="menu-item"><a class="menu-link" href="/baking-cooking/"><i class="fa-solid fa-kitchen-set fa-fw fa-sm" aria-hidden="true"></i> Baking &amp; Cooking</a></li><li class="menu-item"><a class="menu-link" href="/crafting/"><i class="fa-solid fa-mitten fa-fw fa-sm" aria-hidden="true"></i> Crafting</a></li><li class="menu-item"><a class="menu-link" href="/personal/"><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> Personal</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>HubSpot&#39;s Secret Shadow Proxy</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-included-in">&nbsp;included in <a href="/engineering/" class="post-category" title="Category - Engineering"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Engineering</a></span></div><div class="post-meta-line"><span title="published on 2017-06-01 14:17:00"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2017-06-01">2017-06-01</time></span>&nbsp;<span title="1077 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 1100 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>6 minutes</span>&nbsp;</div>
+    </div><div class="content" id="content"><p>I’ve got beef with the <a href="https://developers.hubspot.com/docs/overview"target="_blank" rel="external nofollow noopener noreferrer">HubSpot API</a> and it has its fair share of issues. I’ll do another post in the future discussing those more, but that’s not the focus of this post.</p>
+<p>HubSpot has a secret, and I’ve found it out.</p>
+<p>Ok, so it’s not the coolest secret in the world. It’s not like I’ve found a backdoor into their mainframe or detected a glitch in the Matrix or anything, but I thought it was pretty cool. So I’d like to share with the world.</p>
+<p>I said I wasn’t going to mention the failings of the HubSpot API in depth in this post, and I’m not going to, but I should at least mention a few to serve as a prologue.</p>
+<p>The HubSpot API is fragmented. What do I mean by that? Everything has an endpoint. That’s not necessarily bad, but when dealing with rate limits it can become a hassle. Having to get a list of things, then get a list of things for those things can easily get out of hand and you can run into a 1+n or an n+1 problem. For the requirements of the project that I’m working on, I worry about the 10 requests/second limit. A single page load won’t hit 10, but if multiple loads for different customers takes place, we might run into that problem.</p>
+<p>This concern led me to google “hubspot graphql” in hopes that maybe, just <em>maybe</em> there’s a better option out there that I hadn’t found yet.</p>
+<p>There’s not.</p>
+<p>However, that did lead me to this article on Medium: <a href="https://medium.com/drift-engineering/choosing-graphql-to-build-drifts-messaging-platform-8b4310facbc1"target="_blank" rel="external nofollow noopener noreferrer">Choosing GraphQL to build Drift’s messaging platform</a></p>
+<p>The author of that article states that he led the engineering team at HubSpot through their API rewrite. Before diving into the “lessons learned” and the confessions of what they did wrong, he starts out with this:</p>
+<blockquote>
+<p>At HubSpot, as soon as a front-end engineer would ask for another piece of data, especially one that required either calculation or aggregation, I would suggest they make one or more extra calls on the client.</p>
+<p>Unfortunately, they obliged.</p></blockquote>
+<p>This snippet sets up my favorite part of the article:</p>
+<blockquote>
+<p>Many of our front-end engineers decided to tackle the problem head-on and began deploying lightweight node.js proxy services to combine multiple requests from our APIs into simpler responses containing exactly what they needed while reducing network latency.</p></blockquote>
+<p>That got me thinking. I wanted to know what these guys had done. If they were dogfooding their subpar API, then maybe they had done something themselves to solve at least some of the problems that I was experiencing.</p>
+<p>So I fired up my test HubSpot account, opened the network tab in the Chrome Developer Tools, and proceeded to snoop the network requests being made on a contact’s profile.</p>
+<p>Most of the calls to the API were the same ones listed in the public docs, but there were a few in there that weren’t. Naturally I grabbed the Urls and threw them into Postman.</p>
+<p><strong>Example URL:</strong><br>
+<code>https://api.hubapi.com/email/v1/contacts/jdoe@example.com/subscriptions?hapikey=xxx-xx-xx-xxxxxx</code></p>
+<p><strong>Response:</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">This endpoint does not accept EXTERNAL hapikeys, and has no special allowances for this hapikey (xxx-xx-xx-xxxxxx).  hapikey auth configuration for this endpoint: HapikeyAuthenticator{allows=INTERNAL}</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Drats! But this was still interesting. They were using the same API subdomain, but certain URIs were marked as internal only. Fascinating.</p>
+<p>I thought that was the end of that. I went about my business continuing work on on the task at hand - mucking about with API calls and transforming the responses for our needs. Then one day I notice something in the response object for a contact:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">    &#34;profile-url&#34;: &#34;https://app.hubspot.com/contacts/{contact-id}/lists/public/contact/{a-super-long-obfuscated-string}/&#34;
+</span></span><span class="line"><span class="cl">}</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Clicking that link (the real one, not the sample &#x1f603; ) opens a public page showing most of the info for a contact that you’d see in the HubSpot app. “Is this truly public?” I thought to myself. So I opened it in an Incognito window and yup, same info. How was HubSpot doing this? Time to fire up the network tab again and go snooping!</p>
+<p>This time, the snooping paid off. Most of the calls were all being made to the same endpoint: <code>https://api.hubapi.com/public-auth-proxy/v1/proxy?encryptedToken={the-same-super-long-obfuscated-string-from-before}</code>.</p>
+<p>What the what?? I quickly googled the URL/URI combination and searched the HubSpot developer community for a sign that someone knows what this URL is. Nothing. No results found matching my query. What was this thing?</p>
+<p>Looking at the rest of the request data, I see that they are all <code>POST</code> requests, with a body of their desired endpoint and any other parameters for the forwarding request.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">    &#34;uri&#34;:&#34;https://api.hubapi.com/email/v1/contacts/jdoe@example.com/subscriptions&#34;,
+</span></span><span class="line"><span class="cl">    &#34;method&#34;:&#34;GET&#34;
+</span></span><span class="line"><span class="cl">}</span></span></code></pre></td></tr></table>
+</div>
+</div><p>At this point I go “huh, I wonder” and I fire up Postman again. Guess what? It freaking worked. No <code>hapikey</code> or OAuth token needed. It seems that this proxy is authenticated via that “encrypted token” which is so readily passed around. As to how long those tokens last or whether they change, I can’t say, but what I can say is that I can now make (some) internal API requests.</p>
+<p>I know what you’re thinking, <em>security hole</em>!!! Yes? But mostly no. After I found the proxy, I started testing all sorts of requests. Most of those internal API endpoints that I found earlier don’t work. It seems that the proxy is only set up to respond to certain pre-defined URIs, probably related to the data needed for the public profile page. Still wanting to see how far the power of the proxy went, I tried to <code>DELETE</code> a contact - nope. Error!</p>
+<p><code>Invalid path for /contacts/v1/contact/vid/{contact-id}</code></p>
+<p>So that’s good at least. There is a little bit of security in this thing.</p>
+<p>One of the most useful URIs to be allowed by the proxy is to <code>/timeline/v2/contacts/{contact-id}</code>. It’s a wonderfully useful aggregate of info that if using the public API, would require multiple calls and client side parsing, ordering, and zipping.</p>
+<p>At this point, I was feeling pretty clever and sufficiently satisfied with myself. Logically I knew that I couldn’t use the proxy in production as there’s no official public support and my code could break at any time - especially when they started noticing all of the new external traffic on that endpoint &#x1f603;.</p>
+<p>So that’s where my journey ended. I’m no closer to API bliss than when I started, but I do feel a sense of joy for having discovered something that most people (if any?) in the general HubSpot API user public don’t know about. So I got that going for me, which is nice.</p>
+<figure><img src="/wp-content/uploads/sites/2/2020/12/which-is-nice.jpg">
+</figure>
+
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2017-06-01 14:17:00">Updated on 2017-06-01&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/2017/06/01/hubspots-secret-shadow-proxy/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span><span><a href="vscode://file//Users/steven/Code/stevenwadejr/stevenwadejr_com/content/posts/hubspots-secret-shadow-proxy.md" title="Open in editor"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Open in editor</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://localhost:1313/2017/06/01/hubspots-secret-shadow-proxy/" data-title="HubSpot&#39;s Secret Shadow Proxy"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/2017/06/01/hubspots-secret-shadow-proxy/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/2017/06/01/hubspots-secret-shadow-proxy/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Pinterest" data-sharer="pinterest" data-url="http://localhost:1313/2017/06/01/hubspots-secret-shadow-proxy/"><i class="fa-brands fa-pinterest fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/2017/06/01/hubspots-secret-shadow-proxy/" data-title="HubSpot&#39;s Secret Shadow Proxy"><i class="fa-brands fa-hacker-news fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://localhost:1313/2017/06/01/hubspots-secret-shadow-proxy/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/2016/03/03/starting-a-user-group/" class="post-nav-item" rel="prev" title="Starting a User Group"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Starting a User Group</a><a href="/2018/09/18/readability-counts/" class="post-nav-item" rel="next" title="Readability Counts">Readability Counts<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Steven Wade</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/search.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"version":"v0.3.20"};console.log('Page config:', window.config);</script><script src="/js/theme.min.js" defer></script></body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en-US">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Call Recording Disclosure With Twilio - Steven Wade</title><meta name="author" content="Steven Wade">
+<meta name="description" content="There may be instances where you want to play audio (a recording) or a message with Twilio before a call connects - such as a message disclosing that the call is being recorded.
+For incoming calls, this can easily be accomplished by putting a &lt;Say&gt; or &lt;Play&gt; verb in your TwiML before dialing the intended application or party. But for outgoing calls, how do you ensure a message or recording is played to someone as soon as they answer the call?
+"><meta name="keywords" content='twilio, web'>
+  <meta itemprop="name" content="Call Recording Disclosure with Twilio">
+  <meta itemprop="description" content="There may be instances where you want to play audio (a recording) or a message with Twilio before a call connects - such as a message disclosing that the call is being recorded.
+For incoming calls, this can easily be accomplished by putting a &lt;Say&gt; or &lt;Play&gt; verb in your TwiML before dialing the intended application or party. But for outgoing calls, how do you ensure a message or recording is played to someone as soon as they answer the call?">
+  <meta itemprop="datePublished" content="2024-02-29T14:00:34+00:00">
+  <meta itemprop="dateModified" content="2024-02-29T14:00:34+00:00">
+  <meta itemprop="wordCount" content="335">
+  <meta itemprop="keywords" content="Twilio,Web"><meta property="og:url" content="http://localhost:1313/2024/02/29/call-recording-disclosure-with-twilio/">
+  <meta property="og:site_name" content="Steven Wade">
+  <meta property="og:title" content="Call Recording Disclosure with Twilio">
+  <meta property="og:description" content="There may be instances where you want to play audio (a recording) or a message with Twilio before a call connects - such as a message disclosing that the call is being recorded.
+For incoming calls, this can easily be accomplished by putting a &lt;Say&gt; or &lt;Play&gt; verb in your TwiML before dialing the intended application or party. But for outgoing calls, how do you ensure a message or recording is played to someone as soon as they answer the call?">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-02-29T14:00:34+00:00">
+    <meta property="article:modified_time" content="2024-02-29T14:00:34+00:00">
+    <meta property="article:tag" content="Twilio">
+    <meta property="article:tag" content="Web">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Call Recording Disclosure with Twilio">
+  <meta name="twitter:description" content="There may be instances where you want to play audio (a recording) or a message with Twilio before a call connects - such as a message disclosing that the call is being recorded.
+For incoming calls, this can easily be accomplished by putting a &lt;Say&gt; or &lt;Play&gt; verb in your TwiML before dialing the intended application or party. But for outgoing calls, how do you ensure a message or recording is played to someone as soon as they answer the call?">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" type="text/html" href="http://localhost:1313/2024/02/29/call-recording-disclosure-with-twilio/" title="Call Recording Disclosure with Twilio - Steven Wade" /><link rel="prev" type="text/html" href="http://localhost:1313/2021/02/16/youll-never-work-in-this-town-again/" title="&#34;You&#39;ll never work in this town again&#34;" /><link rel="next" type="text/html" href="http://localhost:1313/2024/03/01/mapping-css-color-names-to-rgb-and-hex-codes/" title="Mapping CSS Color Names to RGB and Hex Codes" /><link rel="alternate" type="text/markdown" href="http://localhost:1313/2024/02/29/call-recording-disclosure-with-twilio/index.md" title="Call Recording Disclosure with Twilio - Steven Wade"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Call Recording Disclosure with Twilio",
+    "inLanguage": "en-US",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/2024\/02\/29\/call-recording-disclosure-with-twilio\/"
+    },"genre": "posts","keywords": "twilio, web","wordcount":  335 ,
+    "url": "http:\/\/localhost:1313\/2024\/02\/29\/call-recording-disclosure-with-twilio\/","datePublished": "2024-02-29T14:00:34+00:00","dateModified": "2024-02-29T14:00:34+00:00","license": "© Steven Wade Jr. All rights reserved.","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Steven Wade"
+      },"description": ""
+  }
+  </script><script src="/js/head/color-scheme.min.js"></script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Steven Wade"><span class="header-title-text">Steven Wade</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a class="menu-link" href="/engineering/"><i class="fa-solid fa-code fa-fw fa-sm" aria-hidden="true"></i> Engineering</a></li><li class="menu-item">
+              <a class="menu-link" href="/professional/"><i class="fa-solid fa-user-tie fa-fw fa-sm" aria-hidden="true"></i> Professional</a></li><li class="menu-item">
+              <a class="menu-link" href="/baking-cooking/"><i class="fa-solid fa-kitchen-set fa-fw fa-sm" aria-hidden="true"></i> Baking &amp; Cooking</a></li><li class="menu-item">
+              <a class="menu-link" href="/crafting/"><i class="fa-solid fa-mitten fa-fw fa-sm" aria-hidden="true"></i> Crafting</a></li><li class="menu-item">
+              <a class="menu-link" href="/personal/"><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> Personal</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Steven Wade"><span class="header-title-text">Steven Wade</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li class="menu-item"><a class="menu-link" href="/engineering/"><i class="fa-solid fa-code fa-fw fa-sm" aria-hidden="true"></i> Engineering</a></li><li class="menu-item"><a class="menu-link" href="/professional/"><i class="fa-solid fa-user-tie fa-fw fa-sm" aria-hidden="true"></i> Professional</a></li><li class="menu-item"><a class="menu-link" href="/baking-cooking/"><i class="fa-solid fa-kitchen-set fa-fw fa-sm" aria-hidden="true"></i> Baking &amp; Cooking</a></li><li class="menu-item"><a class="menu-link" href="/crafting/"><i class="fa-solid fa-mitten fa-fw fa-sm" aria-hidden="true"></i> Crafting</a></li><li class="menu-item"><a class="menu-link" href="/personal/"><i class="fa-solid fa-user fa-fw fa-sm" aria-hidden="true"></i> Personal</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>Call Recording Disclosure With Twilio</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-included-in">&nbsp;included in <a href="/engineering/" class="post-category" title="Category - Engineering"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Engineering</a></span></div><div class="post-meta-line"><span title="published on 2024-02-29 14:00:34"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-02-29">2024-02-29</time></span>&nbsp;<span title="335 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>2 minutes</span>&nbsp;</div>
+    </div><div class="content" id="content"><p>There may be instances where you want to play audio (a recording) or a message with Twilio before a call connects - such as a message <a href="https://help.twilio.com/articles/360011522553"target="_blank" rel="external nofollow noopener noreferrer">disclosing</a> that the call is being recorded.</p>
+<p>For incoming calls, this can easily be accomplished by putting a <code>&lt;Say&gt;</code> or <code>&lt;Play&gt;</code> verb in your TwiML before dialing the intended application or party. But for outgoing calls, how do you ensure a message or recording is played to someone as soon as they answer the call?</p>
+<p>You can <a href="https://www.twilio.com/docs/voice/twiml/number#example-5-running-twiml-before-parties-are-connected"target="_blank" rel="external nofollow noopener noreferrer">send TwiML instructions to a recipient</a> that will be run before they&rsquo;re connected to the main call. This can be done through the <code>url</code> attribute of the <code>&lt;Number&gt;</code> verb.</p>
+<blockquote>
+<p>By setting the <code>url</code> attribute, we can specify a URL that will return a TwiML response to be run on the called party&rsquo;s end. This TwiML will run after they answer, but before the parties are connected.</p>
+<p>&ldquo;Running TwiML Before Parties Are Connected&rdquo; - twilio.com</p></blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+</span></span><span class="line"><span class="cl">&lt;Response&gt;
+</span></span><span class="line"><span class="cl">    &lt;Dial&gt;
+</span></span><span class="line"><span class="cl">        &lt;Number url=&#34;http://example.com/agent_screen_call&#34;&gt;415-123-4567&lt;/Number&gt;
+</span></span><span class="line"><span class="cl">    &lt;/Dial&gt;
+</span></span><span class="line"><span class="cl">&lt;/Response&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In the example above, before the 415-123-4567 number being connected to the parent call, the <code>url</code> will be requested by Twilio and the response&rsquo;s TwiML will be executed.</p>
+<p>You can have this URL call an endpoint on your server or if you&rsquo;re just looking for a simple message to be played, you can use a Twimlet.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://twimlets.com/echo?Twiml=%3CResponse%3E%3CSay+voice%3D%22Polly.Ruth-Neural%22%3EThis+call+will+be+recorded+for+quality+assurance%3C%2FSay%3E%3C%2FResponse%3E</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The URL above uses a Twimlet function, <code>echo</code>, with a corresponding URL encoded TwiML that will <code>&lt;Say&gt;</code> the message &ldquo;This call will be recorded for quality assurance&rdquo;.</p>
+<p>Altogether we end up with</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+</span></span><span class="line"><span class="cl">&lt;Response&gt;
+</span></span><span class="line"><span class="cl">    &lt;Dial&gt;
+</span></span><span class="line"><span class="cl">        &lt;Number url=&#34;https://twimlets.com/echo?Twiml=%3CResponse%3E%3CSay+voice%3D%22Polly.Ruth-Neural%22%3EThis+call+will+be+recorded+for+quality+assurance%3C%2FSay%3E%3C%2FResponse%3E&#34;&gt;415-123-4567&lt;/Number&gt;
+</span></span><span class="line"><span class="cl">    &lt;/Dial&gt;
+</span></span><span class="line"><span class="cl">&lt;/Response&gt;</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Now, when dialing out of our system, the 415-123-4567 number will hear our call recording disclosure message when they answer. After hearing the message, they&rsquo;ll be connected to the parent call and the two parties will then be able to speak to one another.</p>
+<p>I hope this helps save someone time if they&rsquo;re looking to do something similar.</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2024-02-29 14:00:34">Updated on 2024-02-29&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/2024/02/29/call-recording-disclosure-with-twilio/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span><span><a href="vscode://file//Users/steven/Code/stevenwadejr/stevenwadejr_com/content/posts/call-recording-disclosure-with-twilio.md" title="Open in editor"target="_blank" rel="external nofollow noopener noreferrer" class="link-to-vscode">Open in editor</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://localhost:1313/2024/02/29/call-recording-disclosure-with-twilio/" data-title="Call Recording Disclosure With Twilio" data-hashtags="twilio,web"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/2024/02/29/call-recording-disclosure-with-twilio/" data-hashtag="twilio"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/2024/02/29/call-recording-disclosure-with-twilio/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Pinterest" data-sharer="pinterest" data-url="http://localhost:1313/2024/02/29/call-recording-disclosure-with-twilio/"><i class="fa-brands fa-pinterest fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/2024/02/29/call-recording-disclosure-with-twilio/" data-title="Call Recording Disclosure With Twilio"><i class="fa-brands fa-hacker-news fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://localhost:1313/2024/02/29/call-recording-disclosure-with-twilio/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw me-1" aria-hidden="true"></i><a href="/tags/twilio/" class="post-tag" title="Tags - Twilio">Twilio</a><a href="/tags/web/" class="post-tag" title="Tags - Web">Web</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div><div class="post-nav"><a href="/2021/02/16/youll-never-work-in-this-town-again/" class="post-nav-item" rel="prev" title="&#34;You&#39;ll Never Work in This Town Again&#34;"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>&#34;You&#39;ll Never Work in This Town Again&#34;</a><a href="/2024/03/01/mapping-css-color-names-to-rgb-and-hex-codes/" class="post-nav-item" rel="next" title="Mapping CSS Color Names to RGB and Hex Codes">Mapping CSS Color Names to RGB and Hex Codes<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Steven Wade</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/search.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"version":"v0.3.20"};console.log('Page config:', window.config);</script><script src="/js/theme.min.js" defer></script></body>
+</html>
