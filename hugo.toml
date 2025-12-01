@@ -1,4 +1,6 @@
 baseURL = "https://stevenwadejr.com"
+relativeURLs = false
+canonifyURLs = true
 title = "Steven Wade"
 description = "Husband, Father, Engineer (in that order)"
 theme = "FixIt"
